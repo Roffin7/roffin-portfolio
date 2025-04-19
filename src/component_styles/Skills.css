@@ -1,0 +1,218 @@
+/* Skills.css - Updated with skills- prefix to avoid class conflicts */
+@keyframes skills-particlesMove {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 1000px 500px, 1025px 525px;
+  }
+}
+
+.skills-section {
+  padding: 4rem 0;
+  background-color: #0d161b; /* Updated to match hero section */
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(rgba(79, 36, 21, 0.1) 2px, transparent 2px),
+    radial-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px);
+  background-size: 50px 50px, 100px 100px;
+  background-position: 0 0, 25px 25px;
+  animation: skills-particlesMove 20s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: skills-fadeInUp 1s ease-out;
+}
+
+.skills-header h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.skills-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #ff6b35; /* Updated to match hero section */
+  animation: skills-highlightExpand 1.5s ease-out 0.5s forwards;
+}
+
+.skills-header p {
+  color: #a8c5d3; /* Updated to match hero section */
+  margin-top: 20px;
+  font-size: 1.1rem;
+  animation: skills-fadeIn 1.5s ease-out 0.5s forwards;
+}
+
+.skills-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  gap: 0.5rem;
+  animation: skills-fadeInUp 1s ease-out 0.3s both;
+}
+
+.skills-filter-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(168, 197, 211, 0.2); /* Updated to match hero section */
+  color: #a8c5d3; /* Updated to match hero section */
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px; /* Updated to match hero section's button style */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skills-filter-btn:hover {
+  background-color: rgba(255, 107, 53, 0.1); /* Updated to match hero section */
+  border-color: rgba(255, 107, 53, 0.3); /* Updated to match hero section */
+  color: #ff6b35; /* Updated to match hero section */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(168, 197, 211, 0.2);
+}
+
+.skills-filter-btn.skills-active {
+  background-color: rgba(255, 107, 53, 0.2); /* Updated to match hero section */
+  border-color: #ff6b35; /* Updated to match hero section */
+  color: #ff6b35; /* Updated to match hero section */
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  opacity: 0;
+  animation: skills-fadeIn 1.5s ease-out 0.6s forwards;
+}
+
+.skills-category {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(168, 197, 211, 0.1); /* Updated to match hero section */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.skills-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.2); /* Updated to match hero section */
+  border-color: rgba(255, 107, 53, 0.2); /* Updated to match hero section */
+}
+
+.skills-category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+  color: #ff6b35; /* Updated to match hero section */
+}
+
+.skills-category-header h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skills-item {
+  display: flex;
+  align-items: center;
+}
+
+.skills-bubble {
+  background: linear-gradient(145deg, rgba(255, 107, 53, 0.2) 0%, rgba(255, 107, 53, 0.05) 100%); /* Updated to match hero section */
+  border: 1px solid rgba(255, 107, 53, 0.3); /* Updated to match hero section */
+  border-radius: 50px; /* Updated to match hero section's button style */
+  padding: 0.4rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.skills-bubble span {
+  color: #d1e2eb; /* Updated to match hero section */
+  font-size: 0.9rem;
+}
+
+.skills-bubble:hover {
+  background: linear-gradient(145deg, rgba(255, 107, 53, 0.3) 0%, rgba(255, 107, 53, 0.1) 100%); /* Updated to match hero section */
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2); /* Added glow effect similar to hero buttons */
+}
+
+/* Added animations from hero section with skills- prefix */
+@keyframes skills-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes skills-fadeInUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skills-highlightExpand {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-filter {
+    gap: 0.5rem;
+  }
+  
+  .skills-filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}

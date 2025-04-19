@@ -1,0 +1,571 @@
+/* Hero Section Styles */
+.hero-hero-section {
+  background-color: #14252e;
+  color: #ffffff;
+  padding: 120px 0 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background particles effect */
+.hero-particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(255, 107, 53, 0.1) 2px, transparent 2px),
+    radial-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px);
+  background-size: 50px 50px, 100px 100px;
+  background-position: 0 0, 25px 25px;
+  animation: hero-particlesMove 20s linear infinite;
+}
+
+@keyframes hero-particlesMove {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 1000px 500px, 1025px 525px;
+  }
+}
+
+.hero-greeting-wrapper {
+  overflow: hidden;
+}
+
+.hero-greeting {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: #a8c5d3;
+  transform: translateY(0);
+  animation: hero-fadeInUp 1s ease-out;
+}
+
+.hero-wave {
+  display: inline-block;
+  animation: hero-wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes hero-wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.hero-name {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+  animation: hero-fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-highlight {
+  color: #ff6b35;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0;
+  height: 8px;
+  background-color: rgba(255, 107, 53, 0.3);
+  z-index: -1;
+  animation: hero-highlightExpand 1.5s ease-out 1s forwards;
+}
+
+@keyframes hero-highlightExpand {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.hero-profession {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #d1e2eb;
+  min-height: 2.5rem;
+  animation: hero-fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-typing-text {
+  position: relative;
+}
+
+.hero-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.5em;
+  background-color: #ff6b35;
+  margin-left: 5px;
+  vertical-align: text-bottom;
+  animation: hero-blink 1s step-end infinite;
+}
+
+@keyframes hero-blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-hero-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  color: #a8c5d3;
+  opacity: 0;
+  animation: hero-fadeIn 1.5s ease-out 0.9s forwards;
+}
+
+.hero-animated-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-animated-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #14252e, transparent);
+  animation: hero-textReveal 2s ease-out forwards;
+}
+
+@keyframes hero-textReveal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+/* Updated Button Styles */
+.hero-hero-buttons {
+  opacity: 0;
+  animation: hero-fadeInUp 1s ease-out 1.2s forwards;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Make buttons larger */
+.hero-hero-buttons .hero-btn {
+  padding: 1rem 2.8rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary Button - Hire Me */
+.hero-btn-glow {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  color: #ffffff;
+  position: relative;
+  isolation: isolate;
+  /* Fixed shiny effect by constraining overflow */
+  overflow: hidden;
+}
+
+.hero-btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.6s;
+  z-index: -1;
+}
+
+.hero-btn-glow:hover {
+  background-color: #ff7d4d;
+  border-color: #ff7d4d;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+}
+
+.hero-btn-glow:hover::before {
+  animation: hero-shine 1.5s infinite;
+}
+
+@keyframes hero-shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Secondary Button - Download CV */
+.hero-btn-outline-glow {
+  border: 2px solid #a8c5d3;
+  color: #ffffff;
+  background-color: rgba(20, 37, 46, 0.3);
+  backdrop-filter: blur(5px);
+  position: relative;
+}
+
+.hero-btn-outline-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50px;
+  background: linear-gradient(145deg, rgba(168, 197, 211, 0.1), rgba(255, 107, 53, 0.05));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-btn-outline-glow:hover {
+  border-color: #ff6b35;
+  color: #ff6b35;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(168, 197, 211, 0.3);
+  background-color: rgba(20, 37, 46, 0.5);
+}
+
+.hero-btn-outline-glow:hover::after {
+  opacity: 1;
+}
+
+.hero-btn-outline-glow i {
+  transition: transform 0.3s ease;
+}
+
+.hero-btn-outline-glow:hover i {
+  transform: translateY(2px);
+}
+
+.hero-profile-image-container {
+    background: linear-gradient(145deg, #ff6b35, #ff8e3c);
+    border-radius: 50%;
+    padding: 8px;
+    width: 380px;
+    height: 380px;
+    margin: 135px auto; /* Added margin-top to lower it down */
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: hero-floatAnimation 6s ease-in-out infinite, hero-fadeIn 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+@keyframes hero-floatAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+.hero-profile-image-container:hover .hero-profile-image {
+  transform: scale(1.05);
+}
+
+/* Modified Orbiting elements to be smaller */
+.hero-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Reduced sizes to prevent navbar overlap */
+}
+
+.hero-orbit-1 {
+  width: 110%;
+  height: 110%;
+  animation: hero-orbit 12s linear infinite;
+}
+
+.hero-orbit-2 {
+  width: 130%;
+  height: 130%;
+  animation: hero-orbit 20s linear infinite reverse;
+}
+
+.hero-orbit-3 {
+  width: 150%;
+  height: 150%;
+  animation: hero-orbit 30s linear infinite;
+}
+
+@keyframes hero-orbit {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Tech stack icons - now positioned outside the main profile circle */
+.hero-tech-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: rgba(20, 37, 46, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: #ff6b35;
+  z-index: 5;
+}
+
+.hero-tech-icon span {
+  font-size: 0.9rem;
+}
+
+/* Updated tech icon positioning to orbit around the outer circle */
+.hero-icon-1 {
+  animation: hero-outerOrbit 15s linear infinite;
+}
+
+.hero-icon-2 {
+  animation: hero-outerOrbit 20s linear infinite reverse;
+  animation-delay: -5s;
+}
+
+.hero-icon-3 {
+  animation: hero-outerOrbit 18s linear infinite;
+  animation-delay: -10s;
+}
+
+.hero-icon-4 {
+  animation: hero-outerOrbit 22s linear infinite reverse;
+  animation-delay: -2.5s;
+}
+
+@keyframes hero-outerOrbit {
+  0% { 
+    transform: rotate(0deg) translate(220px) rotate(0deg);
+    top: 50%;
+    left: 50%;
+  }
+  100% { 
+    transform: rotate(360deg) translate(220px) rotate(-360deg);
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@keyframes hero-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes hero-fadeInUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hero-profile-image-container {
+    width: 340px;
+    height: 340px;
+  }
+  
+  .hero-name {
+    font-size: 3.5rem;
+  }
+
+  /* Adjust orbit radius for smaller screens */
+  @keyframes hero-outerOrbit {
+    0% { 
+      transform: rotate(0deg) translate(190px) rotate(0deg);
+      top: 50%;
+      left: 50%;
+    }
+    100% { 
+      transform: rotate(360deg) translate(190px) rotate(-360deg);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-profile-image-container {
+    width: 300px;
+    height: 300px;
+    margin-top: 3rem;
+  }
+  
+  .hero-name {
+    font-size: 3rem;
+  }
+  
+  .hero-profession {
+    font-size: 1.8rem;
+  }
+  
+  .hero-hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .hero-tech-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Further adjust orbit radius */
+  @keyframes hero-outerOrbit {
+    0% { 
+      transform: rotate(0deg) translate(170px) rotate(0deg);
+      top: 50%;
+      left: 50%;
+    }
+    100% { 
+      transform: rotate(360deg) translate(170px) rotate(-360deg);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-hero-section {
+    padding: 100px 0 60px;
+  }
+  
+  .hero-hero-content {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .hero-hero-description {
+    margin: 0 auto 2rem;
+  }
+  
+  .hero-profile-image-container {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .hero-name {
+    font-size: 2.5rem;
+  }
+  
+  .hero-profession {
+    font-size: 1.6rem;
+  }
+  
+  /* Adjust orbit sizes for mobile */
+  .hero-orbit-1 {
+    width: 105%;
+    height: 105%;
+  }
+  
+  .hero-orbit-2 {
+    width: 115%;
+    height: 115%;
+  }
+  
+  .hero-orbit-3 {
+    width: 125%;
+    height: 125%;
+  }
+
+  /* Adjust tech icons orbit radius */
+  @keyframes hero-outerOrbit {
+    0% { 
+      transform: rotate(0deg) translate(140px) rotate(0deg);
+      top: 50%;
+      left: 50%;
+    }
+    100% { 
+      transform: rotate(360deg) translate(140px) rotate(-360deg);
+      top: 50%;
+      left: 50%;
+    }
+  }
+  
+  /* Responsive button adjustments */
+  .hero-hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .hero-hero-buttons .hero-btn {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-profile-image-container {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .hero-hero-buttons .hero-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .hero-name {
+    font-size: 2.2rem;
+  }
+  
+  .hero-tech-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .hero-tech-icon span {
+    font-size: 0.8rem;
+  }
+
+  /* Make orbit radius even smaller for very small screens */
+  @keyframes hero-outerOrbit {
+    0% { 
+      transform: rotate(0deg) translate(120px) rotate(0deg);
+      top: 50%;
+      left: 50%;
+    }
+    100% { 
+      transform: rotate(360deg) translate(120px) rotate(-360deg);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}

@@ -1,0 +1,682 @@
+.about-section {
+  background-color: #0f1b22; /* Match hero section background */
+  color: #ffffff;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Particles background - keeping the same as hero section */
+.about-section .particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(255, 107, 53, 0.1) 2px, transparent 2px),
+    radial-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px);
+  background-size: 50px 50px, 100px 100px;
+  background-position: 0 0, 25px 25px;
+  animation: particlesMove 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes particlesMove {
+  0% {
+    background-position: 0 0, 25px 25px;
+  }
+  100% {
+    background-position: 1000px 500px, 1025px 525px;
+  }
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Modern Header styling with clean design */
+.about-header {
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Original title style (keeping for reference but we'll use the new one) */
+.about-section-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ffffff, #d1e2eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: inline-block;
+}
+
+/* New simplified title style */
+.about-section-title-simple {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.about-highlight {
+  color: #ff6b35;
+  position: relative;
+  z-index: 1;
+  font-style: normal; /* Changed from italic */
+}
+
+/* Removing the underline effect */
+.about-highlight::before {
+  display: none;
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: -5px;
+  width: 110%;
+  height: 10px;
+  background-color: rgba(255, 107, 53, 0.3);
+  z-index: -1;
+  border-radius: 4px;
+  transform: skewX(-10deg);
+  animation: accentExpand 1s ease-out forwards;
+  transform-origin: left;
+}
+
+@keyframes accentExpand {
+  0% { transform: skewX(-10deg) scaleX(0); }
+  100% { transform: skewX(-10deg) scaleX(1); }
+}
+
+/* Modern divider with clean design */
+.about-section-divider {
+  width: 60px;
+  height: 2px; /* Made thinner for a more elegant look */
+  background: #ff6b35;
+  margin: 15px auto 0;
+  border-radius: 1px;
+  position: relative;
+  z-index: 1;
+  box-shadow: none; /* Removed shadow for cleaner look */
+}
+
+/* Adding a decorative element to the title */
+.about-header::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  border: 2px solid rgba(255, 107, 53, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.8;
+  animation: pulseCircle 3s infinite ease-in-out;
+}
+
+.about-header::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 107, 53, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulseCircle 3s infinite ease-in-out 1.5s;
+}
+
+@keyframes pulseCircle {
+  0% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 0.3; }
+  100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+}
+
+/* Animation classes - keeping from original about section */
+.about-animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.about-animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dev Quote Card Styling - matched with hero section colors */
+.about-quote-display-col {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.about-dev-quote-card {
+  background-color: rgba(20, 37, 46, 0.6); /* Adjusted to match hero section */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 107, 53, 0.15);
+}
+
+.about-dev-quote-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.about-quote-card-inner {
+  padding: 35px 30px;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex: 0 0 auto;
+  background: linear-gradient(to bottom, rgba(20, 37, 46, 0.5), rgba(20, 37, 46, 0.8)); /* Adjusted to match hero */
+}
+
+.about-quote-icon {
+  color: rgba(255, 107, 53, 0.15);
+  font-size: 5rem;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+.about-quote-content {
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  padding: 0 10px;
+}
+
+.about-quote-text {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: #d1e2eb;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: quoteAnimate 8s infinite;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+@keyframes quoteAnimate {
+  0% { opacity: 0; transform: translateY(20px); }
+  8% { opacity: 1; transform: translateY(0); }
+  92% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.about-quote-author {
+  font-size: 1rem;
+  color: #ff8e3c;
+  font-weight: 600;
+  opacity: 0;
+  animation: quoteAnimate 8s infinite;
+  animation-delay: 0.3s;
+}
+
+.about-quote-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.about-quote-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 107, 53, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-quote-dot.active {
+  background-color: #ff6b35;
+  transform: scale(1.3);
+}
+
+/* Philosophy section styling - matched to hero theme */
+.about-dev-philosophy {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-philosophy-title {
+  font-size: 1.8rem;
+  font-weight: 500; /* Changed from 600 to 500 for consistency */
+  color: #d1e2eb; /* Consistent with hero section */
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.about-philosophy-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+
+.about-philosophy-content {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-philosophy-item {
+  display: flex;
+  margin-bottom: 25px;
+  transform: translateX(-30px);
+  opacity: 0;
+  animation: philosophyItemAnimate 0.5s forwards;
+}
+
+.about-philosophy-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.about-philosophy-item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.about-philosophy-item:nth-child(3) {
+  animation-delay: 0.5s;
+  margin-bottom: 0;
+}
+
+@keyframes philosophyItemAnimate {
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.about-philosophy-icon {
+  flex: 0 0 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b35, #ff8e3c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-right: 15px;
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.about-philosophy-text {
+  flex: 1;
+}
+
+.about-philosophy-text h4 {
+  font-size: 1.1rem;
+  color: #d1e2eb;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.about-philosophy-text p {
+  font-size: 0.95rem;
+  color: #a8c5d3; /* Same as hero section */
+  line-height: 1.6;
+}
+
+/* Bio section styling - updated to match hero theme */
+.about-bio-container {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-bio-section {
+  margin-bottom: 40px;
+  background-color: rgba(20, 37, 46, 0.6); /* Adjusted to match hero section */
+  border-radius: 10px;
+  padding: 25px;
+  border-left: 4px solid #ff6b35;
+  transition: transform 0.3s ease;
+}
+
+.about-bio-section:hover {
+  transform: translateY(-5px);
+}
+
+.about-bio-title {
+  font-size: 1.8rem;
+  font-weight: 500; /* Changed from 600 to 500 for consistency */
+  color: #d1e2eb;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.about-bio-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+
+.about-bio-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #a8c5d3;
+}
+
+/* Timeline styling - updated to match hero theme */
+.about-timeline-container {
+  margin-bottom: 40px;
+}
+
+.about-timeline-title {
+  font-size: 1.8rem;
+  font-weight: 500; /* Changed from 600 to 500 for consistency */
+  color: #d1e2eb;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.about-timeline-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+
+.about-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.about-timeline:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, #ff6b35, rgba(255, 107, 53, 0.1));
+}
+
+.about-timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.about-timeline-marker {
+  position: absolute;
+  left: -37px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff6b35;
+  border: 3px solid #14252e; /* Updated to match hero bg color */
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+}
+
+.about-timeline-date {
+  display: inline-block;
+  padding: 5px 12px;
+  background-color: rgba(255, 107, 53, 0.15);
+  border-radius: 20px;
+  color: #ff8e3c;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.about-timeline-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d1e2eb;
+  margin-bottom: 5px;
+}
+
+.about-timeline-school {
+  font-size: 1rem;
+  color: #d1e2eb;
+  margin-bottom: 5px;
+}
+
+.about-timeline-detail {
+  font-size: 0.95rem;
+  color: #a8c5d3;
+}
+
+/* Update the about-timeline-detail to remove highlight styling */
+.about-timeline-detail span.about-highlight {
+  color: inherit; /* Use the parent text color instead of highlight color */
+  font-style: normal;
+  background: none;
+}
+
+/* Social links styling - updated with hero animations */
+.about-social-links-section {
+  margin-top: 40px;
+}
+
+.about-social-title {
+  font-size: 1.8rem;
+  font-weight: 500; /* Changed from 600 to 500 for consistency */
+  color: #d1e2eb;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about-social-title:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+
+.about-social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.about-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(20, 37, 46, 0.8); /* Adjusted to match hero theme */
+  border-radius: 50%;
+  color: #a8c5d3;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  /* Adding glow effect similar to hero buttons */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.about-social-link:hover {
+  background-color: #ff6b35;
+  color: #ffffff;
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+}
+
+/* Add shine effect like hero buttons */
+.about-social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s;
+  z-index: -1;
+}
+
+.about-social-link:hover::before {
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Responsive styling */
+@media (max-width: 991px) {
+  .about-content-row {
+      flex-direction: column;
+  }
+  
+  .about-quote-display-col {
+      margin-bottom: 40px;
+  }
+  
+  .about-section-title {
+      font-size: 2.8rem;
+  }
+
+  .about-section-title-simple {
+      font-size: 2.4rem;
+  }
+  
+  .about-bio-text {
+      font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-section {
+      padding: 80px 0;
+  }
+  
+  .about-section-title {
+      font-size: 2.5rem;
+  }
+
+  .about-section-title-simple {
+      font-size: 2.2rem;
+  }
+  
+  .about-bio-title, .about-timeline-title, .about-social-title, .about-philosophy-title {
+      font-size: 1.6rem;
+  }
+  
+  .about-social-links {
+      justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section-title {
+      font-size: 2.2rem;
+  }
+
+  .about-section-title-simple {
+      font-size: 2rem;
+  }
+  
+  .about-quote-text {
+      font-size: 1.1rem;
+  }
+  
+  .about-timeline {
+      padding-left: 25px;
+  }
+  
+  .about-timeline-marker {
+      left: -32px;
+      width: 14px;
+      height: 14px;
+  }
+  
+  .about-timeline-date {
+      font-size: 0.8rem;
+  }
+}
+
+/* Add this media query at the bottom of your CSS to hide the quotes and philosophy on mobile */
+@media (max-width: 767px) {
+  .about-quote-display-col {
+    display: none; /* This hides the entire quotes and philosophy column */
+  }
+  
+  /* Ensure the bio section is displayed first and at full width */
+  .about-bio-container {
+    width: 100%;
+    order: -1; /* This ensures it appears first in flex containers */
+  }
+  
+  /* Make sure any column layout is reset */
+  .about-content-row {
+    flex-direction: column;
+  }
+}
+
+/* You might also want to adjust the existing media query at 991px to ensure proper transition */
+@media (max-width: 991px) {
+  .about-content-row {
+    flex-direction: column;
+  }
+  
+  .about-quote-display-col {
+    margin-bottom: 40px;
+    /* Don't hide it yet at this breakpoint, just adjust spacing */
+  }
+  
+  /* Make the bio container take precedence in order */
+  .about-bio-container {
+    order: -1;
+  }
+}
