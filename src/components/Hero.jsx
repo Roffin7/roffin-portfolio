@@ -70,7 +70,7 @@ const Hero = () => {
                         <Button variant="dark" className="hero-btn hero-btn-glow">
                             Hire Me
                         </Button>
-                        <Button variant="outline-primary" className="hero-btn hero-btn-outline-glow">
+                        <Button variant="dark" className="hero-btn hero-btn-outline-glow" href="assets/pdf/RJ_Resume.pdf" download>
                             Download CV <i className="fas fa-download ms-2"></i>
                         </Button>
                     </div>
