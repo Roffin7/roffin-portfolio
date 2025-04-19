@@ -81,7 +81,7 @@ const Hero = () => {
                         <div className="hero-orbit hero-orbit-2"></div>
                         <div className="hero-orbit hero-orbit-3"></div>
                         <img 
-                            src="/assets/images/user_3.png"
+                            src="assets/images/user_3.png"
                             alt="Roffin Jason" 
                             className="hero-profile-image" 
                         />

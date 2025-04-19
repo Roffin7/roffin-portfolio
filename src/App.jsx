@@ -4,10 +4,10 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/roffin-portfolio">
       <Routes>
-        <Route path="" element={<Home />} />
-        {/* You can add more routes later */}
+        <Route path="/" element={<Home />} />
+        {/* Add more routes later */}
       </Routes>
     </Router>
   );
